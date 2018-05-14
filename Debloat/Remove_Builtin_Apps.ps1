@@ -13,7 +13,7 @@ Get-AppxPackage -Name "Microsoft.BingWeather" | Remove-AppxPackage
 Get-AppxPackage *windowscommunicationsapps* | Remove-AppxPackage
   
 # Calculator
-Get-AppxPackage *calculator* | Remove-AppxPackage
+# Get-AppxPackage *calculator* | Remove-AppxPackage
   
 # Camera
 Get-AppxPackage *windowscamera* | Remove-AppxPackage
@@ -23,6 +23,9 @@ Get-AppxPackage -Name "MA278AB0D.DisneyMagicKingdoms" | Remove-AppxPackage
   
 # Dolby
 Get-AppxPackage -Name "DolbyLaboratories.DolbyAccess" | Remove-AppxPackage
+
+# Facebook
+Get-AppxPackage *Facebook* | Remove-AppxPackage
 
 # Feedback Hub
 Get-AppxPackage *WindowsFeedbackHub* | Remove-AppxPackage
@@ -47,26 +50,30 @@ Get-AppxPackage *windowsmaps* | Remove-AppxPackage
 
 # March of Empires
 Get-AppxPackage -Name "A278AB0D.MarchofEmpires" | Remove-AppxPackage
+  
+# Messaging
+Get-appxpackage *messaging* | remove-appxpackage
 
-# Microsoft stuff
+# Microsoft crap
 Get-AppxPackage -Name "Microsoft.MicrosoftPowerBIForWindows" | Remove-AppxPackage
 Get-AppxPackage -Name "Microsoft.NetworkSpeedTest" | Remove-AppxPackage
-  
+Get-AppxPackage *ConnectivityStore* | Remove-AppxPackage
+
 # Minecraft
 Get-AppxPackage -Name "Microsoft.MinecraftUWP" | Remove-AppxPackage
   
+# Mobile Plans
+Get-AppxPackage *Microsoft.OneConnect* | Remove-AppxPackage
+
 # Money
 Get-AppxPackage *bingfinance* | Remove-AppxPackage
   
 # Movies & TV
 Get-AppxPackage *zunevideo* | Remove-AppxPackage
-  
-# Messaging
-Get-appxpackage *messaging* | remove-appxpackage
-  
-# Microsoft WIFI
-Get-AppxPackage *ConnectivityStore* | Remove-AppxPackage
-  
+ 
+# My Office
+Get-AppxPackage *Microsoft.MicrosoftOfficeHub* | Remove-AppxPackage
+
 # Onenote
 Get-AppxPackage *onenote* | Remove-AppxPackage
   
@@ -115,7 +122,7 @@ Get-AppxPackage *soundrecorder* | Remove-AppxPackage
 Get-AppxPackage *Microsoft3DViewer* | Remove-AppxPackage
   
 # XBox
-Get-AppxPackage *xboxapp* | Remove-AppxPackage
+Get-AppxPackage *xbox* | Remove-AppxPackage
   
 # To reinstall ALL Windows default apps, run this command:
 Get-AppXPackage | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
