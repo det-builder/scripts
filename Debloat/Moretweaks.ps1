@@ -1,9 +1,9 @@
-# Disables Windows Feedback Experience
-Write-Output "Disabling Windows Feedback Experience program"
-$Advertising = 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\AdvertisingInfo'
-If (Test-Path $Advertising) {
-  Set-ItemProperty $Advertising -Name Enabled -Value 0 -Verbose
-} 
+
+# Remove the bloatware from getting through the firewall.
+Get-NetFirewallRule | Where { $_.Group -like '*@{*' } | Remove-NetFirewallRule
+Get-NetFirewallRule | Where { $_.Group -eq 'DiagTrack' } | Remove-NetFirewallRule
+Get-NetFirewallRule | Where { $_.DisplayGroup -eq 'Delivery Optimization' } | Remove-NetFirewallRule
+Get-NetFirewallRule | Where { $_.DisplayGroup -like 'Windows Media Player Network Sharing Service*' } | Remove-NetFirewallRule
 
 # Stops the Windows Feedback Experience from sending anonymous data
 Write-Output "Stopping the Windows Feedback Experience program"
@@ -32,12 +32,6 @@ If (Test-Path $Holo) {
 	Set-ItemProperty $Holo -Name FirstRunSucceeded -Value 0 -Verbose
 }
 
-# Turns off Data Collection via the AllowTelemtry key by changing it to 0
-Write-Output "Turning off Data Collection"
-$DataCollection = 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection'    
-If (Test-Path $DataCollection) {
-	Set-ItemProperty $DataCollection -Name AllowTelemetry -Value 0 -Verbose
-}
 
 #Disables scheduled tasks that are considered unnecessary 
 Write-Output "Disabling scheduled tasks"
@@ -47,6 +41,3 @@ Get-ScheduledTask -TaskName Consolidator | Disable-ScheduledTask
 Get-ScheduledTask -TaskName UsbCeip | Disable-ScheduledTask
 Get-ScheduledTask -TaskName DmClient | Disable-ScheduledTask
 Get-ScheduledTask -TaskName DmClientOnScenarioDownload | Disable-ScheduledTask
-
-
-
