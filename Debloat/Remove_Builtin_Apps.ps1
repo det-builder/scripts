@@ -20,6 +20,7 @@ Get-AppxPackage -Name "Microsoft.WindowsCamera" | Remove-AppxPackage
   
 # DisneyMagicKingdoms
 Get-AppxPackage -Name "MA278AB0D.DisneyMagicKingdoms" | Remove-AppxPackage
+Get-AppxPackage -Name "A278AB0D.DisneyMagicKingdoms" | Remove-AppxPackage
   
 # Dolby
 Get-AppxPackage -Name "DolbyLaboratories.DolbyAccess" | Remove-AppxPackage
@@ -106,7 +107,7 @@ Get-AppxPackage -Name "king.com.CandyCrushSodaSaga" | Remove-AppxPackage
 Get-AppxPackage -Name "king.com.*" | Remove-AppxPackage
   
 # Voice Recorder
-Get-AppxPackage *soundrecorder* | Remove-AppxPackage
+Get-AppxPackage -Name "Microsoft.WindowsSoundRecorder" | Remove-AppxPackage
   
 # View 3D
 Get-AppxPackage -Name "Microsoft.Microsoft3DViewer" | Remove-AppxPackage
