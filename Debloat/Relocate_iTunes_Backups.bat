@@ -3,13 +3,18 @@ REM
 REM Note, be sure to put in the correct "<user>" value in the command below.
 REM
 
-REM Ensure the destination directory is deleted.
+REM NOTE! This directory is optional to delete.  If there are backups in this directory
+REM it is safe to not execute this command.
 rmdir /q /s D:\My_Apps\iTunes_Backups\Backup
 
-REM Delete the directory that we're moving.
-del "C:\Users\<user>\AppData\Roaming\Apple Computer\MobileSync\Backup"
+REM Delete the directory that we're moving.  NOTE, with the move to the MS Store, the location
+REM for iTunes backup was changed.  I left the previous version in here.
+REM del "C:\Users\<user>\AppData\Roaming\Apple Computer\MobileSync\Backup"
+del "C:\Users\<user>\Apple\MobileSync\Backup"
 
-REM Execute the mklink command to create a link between the two directories.
-mklink /j "C:\Users\<user>\AppData\Roaming\Apple Computer\MobileSync\Backup" "D:\My_Apps\iTunes_Backups\Backup"
+REM Execute the mklink command to create a link between the two directories.  NOTE, with the move to the MS Store, the location
+REM for iTunes backup was changed.  I left the previous version in here.
+REM mklink /j "C:\Users\<user>\AppData\Roaming\Apple Computer\MobileSync\Backup" "D:\My_Apps\iTunes_Backups\Backup"
+mklink /j "C:\Users\<user>\Apple\MobileSync\Backup" "D:\My_Apps\iTunes_Backups\Backup"
 
 REM At this point, need to ensure the iTunes device backups exist inside of the "D:\My_Apps\iTunes_Backups\Backup" directory.
