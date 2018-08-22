@@ -3,11 +3,12 @@ REM
 REM Note, be sure to put in the correct "<user>" value in the command below.
 REM
 
-REM Ensure the destination directory is deleted.
-rmdir /q /s d:\spotify
+REM Ensure the destination directory is deleted and re-created.
+rmdir /q /s d:\My_Spotify
+mkdir d:\My_Spotify
 
 REM Delete the directory that we're moving.
-del "C:\Users\<user>\AppData\Local\Packages\SpotifyAB.SpotifyMusic_zpdnekdrzrea0\LocalCache\Spotify\data"
+rmdir "C:\Users\<user>\AppData\Local\Packages\SpotifyAB.SpotifyMusic_zpdnekdrzrea0\LocalCache\Spotify\data" /s /q
 
 REM Execute the mklink command to create a link between the two directories.
-mklink /j "C:\Users\<user>\AppData\Local\Packages\SpotifyAB.SpotifyMusic_zpdnekdrzrea0\LocalCache\Spotify\data" "d:\spotify"
+mklink /j "C:\Users\<user>\AppData\Local\Packages\SpotifyAB.SpotifyMusic_zpdnekdrzrea0\LocalCache\Spotify\data" "d:\My_Spotify"
