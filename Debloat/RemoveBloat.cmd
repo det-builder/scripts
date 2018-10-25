@@ -11,6 +11,19 @@ if errorlevel 1 (
 	timeout /t 1 > nul
 )
 
+REM Ensure we're running as an administrator.  If not, notify user and then exit.
+echo.
+echo | set /p=Checking permissions... 
+net session >nul 2>&1
+if errorlevel 1 (
+	echo Permission denied. Run this script as administrator.
+	pause
+	exit
+) else (
+	echo OK.
+	timeout /t 1 > nul
+)
+
 REM Disable useless Windows Services.
 SC STOP DiagTrack
 SC CONFIG DiagTrack start= disabled
@@ -53,7 +66,6 @@ schtasks /Change /TN "Microsoft\Windows\Registry\RegIdleBackup" /Disable
 schtasks /Change /TN "Microsoft\Windows\Feedback\Siuf\DmClient" /Disable
 schtasks /Change /TN "Microsoft\Windows\Feedback\Siuf\DmClientOnScenarioDownload" /Disable
 
-
 REM Disable telemtry and data collection.
 reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Device Metadata" /v PreventDeviceMetadataFromNetwork /t REG_DWORD /d 1 /f
 reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection" /v "AllowTelemetry" /t REG_DWORD /d 0 /f
@@ -69,10 +81,10 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Control\WMI\AutoLogger\SQMLogger" /v "Sta
 
 REM Privacy stuff
 reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\AdvertisingInfo" /v Enabled /t REG_DWORD /d 0 /f
-reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\AdvertisingInfo" /v Enabled /t REG_DWORD /d 0 /f
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\AdvertisingInfo" /v "DisabledByGroupPolicy" /t REG_DWORD /d 1 /f
 reg add "HKLM\Software\Microsoft\PolicyManager\default\WiFi\AllowWiFiHotSpotReporting" /v value /t REG_DWORD /d 0 /f
 reg add "HKLM\Software\Microsoft\PolicyManager\default\WiFi\AllowAutoConnectToWiFiSenseHotspots" /v value /t REG_DWORD /d 0 /f
+reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Config" /v DODownloadMode /t REG_DWORD /d 0 /f
 
 REM Show file extensions in Windows Explorer.
 reg add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "HideFileExt" /t REG_DWORD /d 0 /f
@@ -91,4 +103,6 @@ reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\HandwritingErrorReports" /v "P
 REM Remove "3D Objects" from This PC.
 reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}" /f
 
+REM Attempt to rename the mixed reality folder to something else.
+REN "C:\Windows\SystemApps\Microsoft.Windows.HolographicFirstRun_cw5n1h2txyewy" "C:\Windows\SystemApps\OLD_Microsoft.Windows.HolographicFirstRun_cw5n1h2txyewy" 
 
