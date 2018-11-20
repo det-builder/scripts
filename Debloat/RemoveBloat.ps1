@@ -41,6 +41,7 @@ Get-AppxPackage -Name "king.com.CandyCrushSodaSaga" | Remove-AppxPackage
 Get-AppxPackage -Name "king.com.*" | Remove-AppxPackage
 Get-AppxPackage -Name "Microsoft.WindowsSoundRecorder" | Remove-AppxPackage
 Get-AppxPackage -Name "Microsoft.Microsoft3DViewer" | Remove-AppxPackage
+Get-AppxPackage -Name "Microsoft.3DBuilder" | Remove-AppxPackage
 Get-AppxPackage -Name "Microsoft.Xbox.TCUI" | Remove-AppxPackage
 Get-AppxPackage -Name "Microsoft.XboxApp" | Remove-AppxPackage
 Get-AppxPackage -Name "Microsoft.XboxGameOverlay" | Remove-AppxPackage
