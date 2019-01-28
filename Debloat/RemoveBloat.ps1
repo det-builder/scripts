@@ -48,6 +48,9 @@ Get-AppxPackage -Name "Microsoft.XboxGameOverlay" | Remove-AppxPackage
 Get-AppxPackage -Name "Microsoft.XboxGamingOverlay" | Remove-AppxPackage
 Get-AppxPackage -Name "Microsoft.XboxIdentityProvider" | Remove-AppxPackage
 Get-AppxPackage -Name "Microsoft.XboxSpeechToTextOverlay" | Remove-AppxPackage
+Get-AppxPackage -Name "Microsoft.MixedReality.Portal" | Remove-AppxPackage
+Get-AppxPackage -Name "Microsoft.ScreenSketch" | Remove-AppxPackage
+Get-AppxPackage -Name "Microsoft.YourPhone" | Remove-AppxPackage
   
 # Attempt to get rid of Cortana.
 $searchRegistyPath = Test-Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search"
