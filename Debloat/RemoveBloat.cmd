@@ -106,3 +106,6 @@ reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explore
 REM Attempt to rename the mixed reality folder to something else.
 REN "C:\Windows\SystemApps\Microsoft.Windows.HolographicFirstRun_cw5n1h2txyewy" "C:\Windows\SystemApps\OLD_Microsoft.Windows.HolographicFirstRun_cw5n1h2txyewy" 
 
+REM Remove "GameBar" (needs a reboot to take affect.)
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\ApplicationManagement\AllowGameDVR" /v "value" /t REG_DWORD /d 0 /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\current\device\ApplicationManagement" /v "AllowGameDVR" /t REG_DWORD /d 0 /f 
