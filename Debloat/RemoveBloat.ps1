@@ -125,7 +125,7 @@ Get-ScheduledTask -TaskName DmClientOnScenarioDownload | Disable-ScheduledTask
 # Get-AppXPackage | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
   
 # To get a listing of installed packages, run this command:
-# Get-AppxPackage | select name, packagefullname | d:\packages.txt
+# Get-AppxPackage | select name, packagefullname | sort name > c:\packages.txt
 
 # To get a listing of the default apps windows installs for a new user:
 #Get-ProvisionedAppXPackage -Online|Select DisplayName
