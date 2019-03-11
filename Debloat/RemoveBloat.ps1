@@ -52,6 +52,7 @@ Get-AppxPackage -Name "Microsoft.MixedReality.Portal" | Remove-AppxPackage
 Get-AppxPackage -Name "Microsoft.ScreenSketch" | Remove-AppxPackage
 Get-AppxPackage -Name "Microsoft.YourPhone" | Remove-AppxPackage
 Get-AppxPackage -Name "Microsoft.Calculator" | Remove-AppxPackage
+Get-AppxPackage -Name "Microsoft.People" | Remove-AppxPackage
   
 # Attempt to get rid of Cortana.
 $searchRegistyPath = Test-Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search"
