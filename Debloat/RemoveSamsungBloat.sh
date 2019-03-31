@@ -21,8 +21,13 @@
 #
 # Misc Commands
 # adb shell pm list packages -s  (Shows only system packages)
-# adb shell pm list package -3   (Shows all non-system packages)
+# adb shell pm list packages -3  (Shows all non-system packages)
+# adb shell pm list packages -d  (Shows all disabled packages)
+# adb shell pm list packages -e  (Shows all enabled packages)
 #
+# Additional Commands
+# adb shell pm uninstall -k --user 0 <packagename>    (this command completely uninstalls. Careful, is irreversible! Without a reset.
+# adb shell pm enable --user 0 <packagename>   
 # =======================================================================================================
 #
 # Useless apps so un-necessary I completely delete the package from my phone.
