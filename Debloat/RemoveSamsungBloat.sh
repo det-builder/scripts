@@ -169,6 +169,10 @@ pm disable-user --user 0 com.sec.enterprise.mdm.vpn                       # Sams
 pm disable-user --user 0 com.sec.unifiedwfc                               # WIFI Calling
 pm disable-user --user 0 com.skms.android.agent                           # SKMS Agent Server - Has to do with NFC.
 pm disable-user --user 0 flipboard.boxer.app                              # Briefing
+pm disable-user --user 0 com.sec.android.daemonapp                        # Samsung Weather
+pm disable-user --user 0 com.sec.android.inputmethod                      # Samsung Keyboard
+pm disable-user --user 0 com.samsung.android.service.airviewdictionary    # Samsung Air Translate
+pm disable-user --user 0 com.samsung.carrier.logcollector                 # Not sure
 
 # Remove VR Stuff.
 pm disable-user --user 0 com.google.ar.core                               # Google VR SDK
