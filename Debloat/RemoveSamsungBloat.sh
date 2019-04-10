@@ -40,14 +40,18 @@ pm disable-user --user 0 com.samsung.android.bixby.agent
 pm disable-user --user 0 com.samsung.android.bixby.agent.dummy
 pm disable-user --user 0 com.samsung.android.bixby.service
 pm disable-user --user 0 com.samsung.android.bixby.wakeup
-pm disable-user --user 0 com.samsung.android.bixbyvision.framework
 pm disable-user --user 0 com.samsung.android.bixbyvision.skincare
 pm disable-user --user 0 com.samsung.android.app.settings.bixby
 pm disable-user --user 0 com.samsung.systemui.bixby2
 pm disable-user --user 0 com.samsung.android.app.spage   # (Bixby Home) NOTE!  This one will re-start after every reboot.  
+
+# Bixby Vision - These are used by the camera app to scan bar codes, QR codes, etc, etc.  These could be useful.
+pm disable-user --user 0 com.samsung.android.bixbyvision.framework
 pm disable-user --user 0 com.samsung.android.visionintelligence
 
 # Remove carrier apps
+pm disable-user --user 0 com.customermobile.preload.vzw              # Carrier garbage
+pm disable-user --user 0 com.LogiaGroup.LogiaDeck                    # Carrier garbage
 pm disable-user --user 0 com.securityandprivacy.android.verizon.vms  # Security and Privacy
 pm disable-user --user 0 com.telecomsys.directedsms.android.SCG      # Verizon Location Agent
 pm disable-user --user 0 com.vcast.mediamanager                      # My Cloud
@@ -72,6 +76,11 @@ pm disable-user --user 0 com.samsung.android.app.cocktailbarservice
 pm disable-user --user 0 com.monotype.android.font.chococooky
 pm disable-user --user 0 com.monotype.android.font.cooljazz
 pm disable-user --user 0 com.monotype.android.font.rosemary
+
+# Remove Air Command Stuff.
+pm disable-user --user 0 com.samsung.android.aircommandmanager
+pm disable-user --user 0 com.samsung.android.service.aircommand
+pm disable-user --user 0 com.samsung.android.service.airviewdictionary
 
 # Remove Game apps.
 pm disable-user --user 0 com.samsung.android.game.gamehome           # Game Launcher
@@ -171,7 +180,6 @@ pm disable-user --user 0 com.skms.android.agent                           # SKMS
 pm disable-user --user 0 flipboard.boxer.app                              # Briefing
 pm disable-user --user 0 com.sec.android.daemonapp                        # Samsung Weather
 pm disable-user --user 0 com.sec.android.inputmethod                      # Samsung Keyboard
-pm disable-user --user 0 com.samsung.android.service.airviewdictionary    # Samsung Air Translate
 pm disable-user --user 0 com.samsung.carrier.logcollector                 # Not sure
 
 # Remove VR Stuff.
