@@ -28,6 +28,7 @@
 # Additional Commands
 # adb shell pm uninstall -k --user 0 <packagename>    (this command completely uninstalls. Careful, is irreversible! Without a reset.
 # adb shell pm enable --user 0 <packagename>   
+# adb shell cmd package install-existing com.sec.android.app.launcher (Run this if accidentally delete all launchers)
 # =======================================================================================================
 #
 # Useless apps so un-necessary I completely delete the package from my phone.
@@ -181,6 +182,8 @@ pm disable-user --user 0 flipboard.boxer.app                              # Brie
 pm disable-user --user 0 com.sec.android.daemonapp                        # Samsung Weather
 pm disable-user --user 0 com.sec.android.inputmethod                      # Samsung Keyboard
 pm disable-user --user 0 com.samsung.carrier.logcollector                 # Not sure
+pm disable-user --user 0 com.samsung.knox.securefolder                    # Samsung Secure Folder
+pm disable-user --user 1 com.samsung.knox.securefolder                    # Samsung Secure Folder 2
 
 # Remove VR Stuff.
 pm disable-user --user 0 com.google.ar.core                               # Google VR SDK
