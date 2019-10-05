@@ -5,6 +5,10 @@
 # This script can be used to help alleviate my phone from all of the crap
 # that the manufacturer and carrier put on my phone.
 # 
+# Links to external sites:
+#
+# https://forum.xda-developers.com/galaxy-note-9/how-to/note-9-debloat-bash-script-t3907659
+#
 # Sample Commands
 #
 # List all of the packages on the phone. Includes system, user, installed and not.
