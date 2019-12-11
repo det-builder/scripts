@@ -1,5 +1,5 @@
 ##################################################################
-# Relocate_iTunes_Backups.bat                                    #
+# Relocate_iTunes_Backups.sh                                     #
 #                                                                #
 # This script will relocate the iTunes backup folder with within #
 # the user profile folders to a more centralized location on the #
