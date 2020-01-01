@@ -10,6 +10,10 @@ exiftool -P -Model='iPhone XS Max' image.jpg
 # This command creates a csv named "list.csv" in the current directory of the jpg's in the current diretory.
 exiftool -csv -FileModifyDate -FileAccessDate -FileCreateDate -MDItemFSCreationDate -ModifyDate -DateTimeOriginal -CreateDate *.jpg > list.csv
 
+# This command will parse through current directory and all it's subdirectories and set the files create & modify date
+# to the EXIF date for all files with the "JPG" extension.
+exiftool -d %Y%m%d "-filename<datetimeoriginal" "-filemodifydate<datetimeoriginal#" -ext jpg -r .
+
 # Misc Links
 https://exiftool.org/TagNames/
 https://exiftool.org/TagNames/MacOS.html
