@@ -13,7 +13,7 @@ rsync -v -a --delete "/Volumes/D_Drive/OneDrive/My_Music" "/Volumes/BackupDrive/
 rsync -v -a --delete "/Volumes/D_Drive/OneDrive/My_Pictures" "/Volumes/BackupDrive/D_Drive"
 
 # Sync misc folders.
-rsync -a --delete "/Users/dave/Library/Application Support/Firefox/Profiles/a85kqxld.default" "/Volumes/BackupDrive/Firefox_Profile"
+rsync -a --delete "/Users/xxxxx/Library/Application Support/Firefox/Profiles/a85kqxld.default" "/Volumes/BackupDrive/Firefox_Profile"
 
 # Write the current date so that we know when this drive was last synched.
 date +%a" "%b" "%d" "%Y > /Volumes/BackupDrive/LastSync.txt
