@@ -109,6 +109,7 @@ pm disable-user --user 0 com.android.providers.userdictionary        # User Dict
 pm disable-user --user 0 com.google.android.feedback                 # Google Market Feedback agent
 # pm disable-user --user 0 com.google.android.googlequicksearchbox   # Don't disable this!  This is the central Google app, needed!
 pm disable-user --user 0 com.google.android.onetimeinitializer       # Google One Time Init - triggered on first boot
+pm disable-user --user 0 com.google.android.projection.gearhead      # Android Auto
 
 # Remove Samsung Camera stuff
 pm disable-user --user 0 com.samsung.android.app.camera.sticker.facear.preload
@@ -126,6 +127,7 @@ pm disable-user --user 0 com.samsung.desktopsystemui
 pm disable-user --user 0 com.sec.android.desktopcommunity
 pm disable-user --user 0 com.sec.android.desktopmode.uiservice
 pm disable-user --user 0 com.sec.android.app.desktoplauncher
+pm disable-user --user 0 com.sec.android.app.dexonpc
 
 # Remove Samsung Interactive Screensaver stuff.
 pm disable-user --user 0 com.android.dreams.basic
@@ -188,8 +190,17 @@ pm disable-user --user 0 com.sec.android.inputmethod                      # Sams
 pm disable-user --user 0 com.samsung.carrier.logcollector                 # Not sure
 pm disable-user --user 0 com.samsung.knox.securefolder                    # Samsung Secure Folder
 pm disable-user --user 1 com.samsung.knox.securefolder                    # Samsung Secure Folder 2
+pm disable-user --user 0 com.samsung.android.beaconmanager                # Smart Things
+pm disable-user --user 0 com.sec.android.autodoodle.service               # Auto Doodle
+pm disable-user --user 0 com.samsung.android.mdx                          # Link to Windows Service
 
 # Remove VR Stuff.
 pm disable-user --user 0 com.google.ar.core                               # Google VR SDK
 pm disable-user --user 0 com.google.vr.vrcore                             # Google VR Service
 pm disable-user --user 0 com.samsung.android.hmt.vrsvc                    # Samsung VR
+
+# Remove Facebook crap.
+pm disable-user --user 0 com.facebook.services
+pm disable-user --user 0 com.facebook.katana
+pm disable-user --user 0 com.facebook.system
+pm disable-user --user 0 com.facebook.appmanager
