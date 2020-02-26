@@ -36,7 +36,7 @@
 # =======================================================================================================
 #
 # Useless apps so un-necessary I completely delete the package from my phone.
-pm uninstall -k --user 0 com.hancom.office.editor.hidden
+pm disable-user --user 0 com.hancom.office.editor.hidden
 pm uninstall -k --user 0 com.samsung.android.widgetapp.yahooedge.finance
 pm uninstall -k --user 0 com.samsung.android.widgetapp.yahooedge.sport
 
@@ -192,7 +192,7 @@ pm disable-user --user 0 com.samsung.knox.securefolder                    # Sams
 pm disable-user --user 1 com.samsung.knox.securefolder                    # Samsung Secure Folder 2
 pm disable-user --user 0 com.samsung.android.beaconmanager                # Smart Things
 pm disable-user --user 0 com.sec.android.autodoodle.service               # Auto Doodle
-pm disable-user --user 0 com.samsung.android.mdx                          # Link to Windows Service
+pm disable-user --user 0 com.samsung.android.samsungpositioning           # Samsung Positioning
 
 # Remove VR Stuff.
 pm disable-user --user 0 com.google.ar.core                               # Google VR SDK
@@ -204,3 +204,7 @@ pm disable-user --user 0 com.facebook.services
 pm disable-user --user 0 com.facebook.katana
 pm disable-user --user 0 com.facebook.system
 pm disable-user --user 0 com.facebook.appmanager
+
+# Remove Microsoft crap.
+pm disable-user --user 0 com.microsoft.appmanager                         # Your phone companion
+pm disable-user --user 0 com.samsung.android.mdx                          # Link to Windows Service
