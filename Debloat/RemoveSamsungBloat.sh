@@ -193,6 +193,7 @@ pm disable-user --user 1 com.samsung.knox.securefolder                    # Sams
 pm disable-user --user 0 com.samsung.android.beaconmanager                # Smart Things
 pm disable-user --user 0 com.sec.android.autodoodle.service               # Auto Doodle
 pm disable-user --user 0 com.samsung.android.samsungpositioning           # Samsung Positioning
+pm disable-user --user 0 com.samsung.android.server.wifi.mobilewips.client # Mobile WIPS
 
 # Remove VR Stuff.
 pm disable-user --user 0 com.google.ar.core                               # Google VR SDK
