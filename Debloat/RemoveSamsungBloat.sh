@@ -209,3 +209,7 @@ pm disable-user --user 0 com.facebook.appmanager
 # Remove Microsoft crap.
 pm disable-user --user 0 com.microsoft.appmanager                         # Your phone companion
 pm disable-user --user 0 com.samsung.android.mdx                          # Link to Windows Service
+
+# Remove Samsung Digital Wellbeing
+pm disable-user --user 0 com.samsung.android.forest
+
