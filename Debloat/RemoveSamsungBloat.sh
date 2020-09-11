@@ -194,6 +194,8 @@ pm disable-user --user 0 com.samsung.android.beaconmanager                # Smar
 pm disable-user --user 0 com.sec.android.autodoodle.service               # Auto Doodle
 pm disable-user --user 0 com.samsung.android.samsungpositioning           # Samsung Positioning
 pm disable-user --user 0 com.samsung.android.server.wifi.mobilewips.client # Mobile WIPS
+pm disable-user --user 0 com.samsung.android.app.tips                     # Tips
+pm disable-user --user 0 com.samsung.android.arzone                       # AR Zone
 
 # Remove VR Stuff.
 pm disable-user --user 0 com.google.ar.core                               # Google VR SDK
